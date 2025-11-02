@@ -89,7 +89,8 @@ def _work_dir_for(
     repo_root = Path(__file__).resolve().parent
     cache_dir = repo_root / "optimizer_results" / "genetic_algo"
     codec = "zopfli" if use_zopfli else "zlib"
-    return cache_dir / f"{task_dir}-{task_id}-{stripper_name}-{codec}"
+    task_name = task_dir.split("/")[-1]
+    return cache_dir / f"{task_name}-{task_id}-{stripper_name}-{codec}"
 
 
 def _matches_original_snapshot(
