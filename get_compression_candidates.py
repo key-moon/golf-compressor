@@ -75,7 +75,7 @@ def _looks_like_zlib_encoded_task(path: Path, *, read_size: int = 512) -> bool:
     except OSError:
         return False
     return (
-        b"#coding:L1" in head
+        b"#coding:l1" in head.lower()
         and b"import zlib" in head
         and b"zlib.decompress" in head
     )
