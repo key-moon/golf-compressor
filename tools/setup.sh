@@ -1,7 +1,7 @@
 set -e
 
 if [ ! -d ".venv" ]; then
-  uv python pin python3.11.13
+  uv python pin python3.11
   uv venv
   rm .python-version
 fi
